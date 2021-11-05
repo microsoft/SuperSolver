@@ -8,7 +8,9 @@ When all of the files are in the Sage directory, the command
 
 load("Runner.sage")
 
-will perform the Delfs-Galbraith algorithm to find the isogeny between E1/GF(p^2) and E2/GF(p^2). There are default parameters in Runner.sage that can be modified to any instance of the supersingular isogeny problem. The 6 inputs specified by the user are 
+will perform the Delfs-Galbraith algorithm to find the isogeny between E1/GF(p^2) and E2/GF(p^2). There are default parameters in Runner.sage that can be modified to any instance of the supersingular isogeny problem. The code will generate new folders in the local directory for the reduced modular polynomials and solution. 
+
+The 6 inputs specified by the user are 
 
 p: the characteristic of the field GF(p^2)
 
