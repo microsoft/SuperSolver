@@ -26,6 +26,18 @@ The j-invariant of E1/GF(p^2) is j1=j10+j11.alpha and the j-invariant of E2/GF(p
 
 The supersolver boolean variable is true by default. Disabling it will call the original Delfs-Galbraith walk in the 2-isogeny graph, without the SuperSolver optimisations described in the paper above. 
 
+The file ExperimentAlgo0.sage can be run to obtain data on many instances of the problem for a given prime. After specifying a prime in ExperimentAlgo0.sage, the command
+
+load("ExperimentAlgo0.sage") 
+
+followed by the command 
+
+Experiment(p,N) 
+
+will run N (an integer) instances of the subfield search problem for pseudo-random supersingular j-invariants over GF(p^2), as in the paper.
+
+
+
 # Bugs, Questions, Comments? 
 
 Please contact Maria Corte-Real Santos (maria.santos.20@ucl.ac.uk) and/or Craig Costello (craigco@microsoft.com) and/or Jia Shi (janeshi99@gmail.com). 
