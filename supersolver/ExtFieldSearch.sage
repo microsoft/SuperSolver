@@ -14,10 +14,14 @@ Returns the appropriate tree depth for
 the iterateive graph search in Algo0
 '''
 def RecursionDepth(p): 
-    #return ceil(log(p,2)) #gives precision errors
-    return len(bin(p))-2
+    #return ceil(log(p,2)) # gives precision errors
+    return len(bin(p))-2   # default depth is the approximate diameter of the graph
 
-# returns a^n
+'''
+Does a plain square and multiply. Users obtaining precise data for a fixed 
+prime p can modify this function using tailored exponentiation methods
+which should slightly improve the cost of the 2-isogeny step.
+'''
 def Expon(a,n):
 
     counter=[0,0,0]
@@ -29,8 +33,12 @@ def Expon(a,n):
             x*=a;                       counter[2] += 1
     return [x,counter]
 
-# updates variables x,y according to Tonelli-Shanks Algorithm
-# increments the operations counter accordingly
+'''
+The functions below for computing optimised square roots in GF(p^2)
+follow the methods described in Michael Scott's "Tricks of the trade" 
+paper. They implement the "progenitor" method with the Tonelli-Shanks algorithm
+'''
+
 def TonelliShanksUpdate(x,y,consts):
 
     counter=[0,0,0]
@@ -63,6 +71,7 @@ def TonelliShanksUpdate(x,y,consts):
 
 # computes the square root of an extension field element
 # increments the operations counter accordingly
+
 def Fp2Sqrt(element,constants):
 
     c0 = constants[0]
@@ -121,7 +130,7 @@ def Fp2Sqrt(element,constants):
 
 # given J in 2-isogeny graph and J0 one of its neighbours
 # generate the two other neighbours using the quadratic
-# function derived from Modular polynomials
+# function derived from modular polynomials
 # increments the operations counter accordingly
 
 def GenerateValidNeighbourQuadratic(J0, J,constants):
@@ -164,8 +173,10 @@ def GenerateValidNeighbourQuadratic(J0, J,constants):
 
 '''
 Finds path in the 2-isogeny graph from base + ext*i
-to a vertex in base field
+to a vertex in base field using a binary tree and a running
+stack. See the paper for further details. 
 '''
+
 def Algo0(p, base, ext, size, constants, supersolver, fast_ells):
 
     _.<i>=Fp2
@@ -311,7 +322,7 @@ def Algo0(p, base, ext, size, constants, supersolver, fast_ells):
 
 '''
 the preprocessing steps for Algo0,
-compute some constants needed for Algo0
+compute some Tonelli-Shanks constants needed for Algo0
 '''
 def Algo0Preprocess(p,supersolver):
 
@@ -348,7 +359,7 @@ def Algo0Preprocess(p,supersolver):
 
         print(" ")
         print("One step in the 2-isogeny graph takes ~ ", muls_step, "Fp-multiplications ")
-
+        print(" ")
         ell=1
         
         while ell < mod_poly_max-1:
@@ -362,6 +373,8 @@ def Algo0Preprocess(p,supersolver):
     
         bits_array=[]
         av_cost=[]
+
+        # exhaustively optimise the cost of inspecting sets of \ell_i
 
         for i in range(2^len(fast_ells)):
             bits=bin(i)
@@ -389,6 +402,8 @@ def Algo0Preprocess(p,supersolver):
                     t.append(fast_ells[i])
             fastest_sets.append(t)
             fastest_subscripts.append(int(bits_array_sorted[j][::-1],2))
+
+        print(" ")
         
     return constants,fastest_sets,fastest_subscripts
 

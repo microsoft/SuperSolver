@@ -1,7 +1,11 @@
 #load("ExtFieldSearch.sage")
 #load("BaseFieldSearch.sage")
 
+# Below functions are exactly as described in the paper
+
 ##########################################################
+# Computes the degree of the level-l modular polynomial
+
 def DegModPoly(l):
 
     L=list(factor(l))
@@ -11,6 +15,7 @@ def DegModPoly(l):
     return N
 
 ##########################################################
+# Computes [j,j^2,...,j^lmax] optimally 
 
 def Poweringj(lmax,j):
 
@@ -29,6 +34,7 @@ def Poweringj(lmax,j):
     return jpowers
 
 ##########################################################
+# Evaluates \Upphi_{l,p}(X,Y) at Y=j
 
 def EvalModPolyj(l,j,p):
 
@@ -64,6 +70,7 @@ def EvalModPolyj(l,j,p):
     return vec,counter
 
 ##########################################################
+# Splits into Real and Imaginary components as in the paper
 
 def RealAndImaginary(vec):
 
@@ -88,6 +95,7 @@ def RealAndImaginary(vec):
     return real,imag
 
 ##########################################################
+# Computes the inversion-free polynomial GCD as in the paper
 
 def InvFreeGCD(g,h):
 

@@ -9,7 +9,7 @@ extension field elements and perform Algo0 on each instance.
 returns statistics
 '''
 
-p=previous_prime(2^28)
+p=previous_prime(2^28) #can be changed by user for experiments
 
 Fp = GF(p)
 c0 = -1 # tries c0 = -1,-2,... for quadratic extension

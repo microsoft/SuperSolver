@@ -18,13 +18,13 @@ def Algo1Preprocess(p):
     assert is_prime(p)
     d = -4 * p
     # B = math.floor(6*(math.log(abs(d))**2)) #Delfs-Galbraith upper bound
-    B = mod_poly_max 
+    B = mod_poly_max #DG upper-bound is overkill for feasible cases
 
     L = [l  for l in prime_range(1, B) if kronecker_symbol(-p, l)==1 and l <= B]
     return L
 
 '''
-Delfs-Galbraith Algorithm: find a path between J0 and J1
+Delfs-Galbraith Algorithm: find a path between J0 and J1 in the subfield
 '''
 def Algo1(p, J0, J1, L):
 

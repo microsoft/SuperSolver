@@ -6,7 +6,7 @@ load("ExtFieldSearch.sage")
 load("BaseFieldSearch.sage")
 
 '''
-Edge: a tuple to store edge, corresponding field, and the prime for the isogeny
+Edge: a tuple to store edge, corresponding field, and the prime for the isogeny degree
 '''
 Edge = namedtuple('Edge', ['J0','J1','Field','l'])
 
@@ -99,8 +99,6 @@ def Solver(p, J0_base, J0_ext, J1_base, J1_ext, supersolver):
         fast_ells=fastest_sets[1]
     else:
         fast_ells=[]
-
-    print(fast_ells)
 
     # algo1 preprocessing
     L = Algo1Preprocess(p)
