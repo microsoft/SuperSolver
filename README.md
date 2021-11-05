@@ -1,33 +1,26 @@
-# Project
+# SuperSolver
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+SuperSolver is a Sage/Python library that solves the general supersingular isogeny problem using the Delfs-Galbraith algorithm. It accompanies the paper “SuperSolver: accelerating the Delfs-Galbraith algorithm with fast subfield root detection”, by Maria Corte-Real Santos, Craig Costello and Jia Shi. 
 
-As the maintainer of this project, please make a few updates:
+# Running the code
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+When all of the files are in the Sage directory, the command 
 
-## Contributing
+load("Runner.sage")
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+will perform the Delfs-Galbraith algorithm to find the isogeny between E1/GF(p^2) and E2/GF(p^2). There are default parameters in Runner.sage that can be modified to any instance of the supersingular isogeny problem. The 6 inputs specified by the user are 
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+p: the characteristic of the field GF(p^2)
+j10: an element of GF(p)
+j11: an element of GF(p)
+j20: an element of GF(p)
+j21: an element of GF(p)
+supersolver: a boolean
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+The j-invariant of E1/GF(p^2) is j1=j10+j11.alpha and the j-invariant of E2/GF(p^2) is j2=j20+j21.alpha, where GF(p^2)=Fp(alpha) is the quadratic extension field specified in Runner.sage. Tiny primes (i.e. p<100) should be avoided since there might not be any supersingular j-invariants in GF(p^2)\GF(p), and the code assumes both input j-invariants are in GF(p^2); note that the supersingular isogeny problem is trivial for such small primes. 
 
-## Trademarks
+The supersolver boolean variable is true by default. Disabling it will call the original Delfs-Galbraith walk in the 2-isogeny graph, without the SuperSolver optimisations described in the paper above. 
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+# Bugs, Questions, Comments? 
+
+Please contact Maria Corte-Real Santos (maria.santos.20@ucl.ac.uk) and/or Craig Costello (craigco@microsoft.com) and/or Jia Shi (janeshi99@gmail.com). 
