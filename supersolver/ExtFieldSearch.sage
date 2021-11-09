@@ -230,7 +230,7 @@ def Algo0(p, base, ext, size, constants, supersolver, fast_ells):
     found= False
     index = 1
 
-    #4thapath
+    #to store the isogeny degree that finds the subfield node
     last_ell = 2
 
     res = generateValidNeighbourModuli(initial_j)
