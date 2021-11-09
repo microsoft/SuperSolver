@@ -1,5 +1,5 @@
-#load("ExtFieldSearch.sage")
-#load("BaseFieldSearch.sage")
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
 
 # Below functions are exactly as described in the paper
 

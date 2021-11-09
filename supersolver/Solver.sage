@@ -1,5 +1,6 @@
-# To run this file:
-# sage shell: load("%filename%.py")
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+
 from collections import namedtuple
 
 load("ExtFieldSearch.sage")

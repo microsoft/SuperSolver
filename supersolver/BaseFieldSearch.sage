@@ -1,5 +1,5 @@
-# To run this file:
-# sage shell: load("%filename%.sage")
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
 
 '''
 Given a prime p and two field elements J0, J1 in Fp
