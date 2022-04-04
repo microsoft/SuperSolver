@@ -14,12 +14,12 @@ j21=136038090
 supersolver=true
 
 ##########################################################
-# Modular polynomials currently restricted to level 50
+# Modular polynomials currently restricted to level 20
 # This can be increased for larger instances, but the modular
 # polynomials (taken from Sutherland's database) 
 # must then be inserted into the Modular_polys folder
 
-mod_poly_max = 50
+mod_poly_max = 20
 
 ##########################################################
 # set up Fp and Fp2
