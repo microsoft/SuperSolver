@@ -1,6 +1,6 @@
 # SuperSolver
 
-SuperSolver is an algorithm written in Sage/Python that solves the general supersingular isogeny problem using the Delfs-Galbraith algorithm. It accompanies the paper “SuperSolver: accelerating the Delfs-Galbraith algorithm with fast subfield root detection”, by Maria Corte-Real Santos, Craig Costello and Jia Shi. 
+SuperSolver is an algorithm written in Sage/Python that solves the general supersingular isogeny problem using the Delfs-Galbraith algorithm. It accompanies the paper "[Accelerating the Delfs–Galbraith Algorithm with Fast Subfield Root Detection](https://link.springer.com/chapter/10.1007/978-3-031-15982-4_10)”, by Maria Corte-Real Santos, Craig Costello and Jia Shi. 
 
 # Running the code
 
