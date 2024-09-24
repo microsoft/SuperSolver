@@ -2,6 +2,33 @@
 
 SuperSolver is an algorithm written in Sage/Python that solves the general supersingular isogeny problem using the Delfs-Galbraith algorithm. It accompanies the paper "[Accelerating the Delfs–Galbraith Algorithm with Fast Subfield Root Detection](https://link.springer.com/chapter/10.1007/978-3-031-15982-4_10)”, by Maria Corte-Real Santos, Craig Costello and Jia Shi. 
 
+# Downloading the Modular Polynomial files
+
+The files containing the modular polynomials (in [supersolver/Modular_polys/](https://github.com/microsoft/SuperSolver/tree/main/supersolver/Modular_polys)) are stored using Git Large File Storage (LFS). For the code to run properly, first install `git-lfs`. Then, after navigating to the folder containing this repository, run `git lfs pull`.
+
+The modular polynomials can also be accessed from [Sutherland's database](https://math.mit.edu/~drew/ClassicalModPolys.html). However, we remark that we fix our ordering so the first line always contains the coefficient corresponding to `[0,0]`. This means that for some $N$, the modular polynomial of level $N$ is stored in reverse order compared to Sutherland's database. For example, Sutherland stores the modular polynomial $\Phi_2(X,Y)$ of level $2$ as:
+
+```
+[3,0] 1
+[2,0] -162000
+[2,1] 1488
+[2,2] -1
+[1,0] 8748000000
+[1,1] 40773375
+[0,0] -157464000000000
+```
+We store this polynomial as:
+
+```
+[0,0] -157464000000000
+[1,0] 8748000000
+[1,1] 40773375
+[2,0] -162000
+[2,1] 1488
+[2,2] -1
+[3,0] 1
+```
+
 # Running the code
 
 When all of the files are in the Sage directory, the command 
