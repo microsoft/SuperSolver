@@ -12,7 +12,9 @@ extension field elements and perform Algo0 on each instance.
 returns statistics
 '''
 
-p=previous_prime(2^28) #can be changed by user for experiments
+p=2^16+1 #can be changed by user for experiments
+mod_poly_max = 50
+logp=16
 
 Fp = GF(p)
 c0 = -1 # tries c0 = -1,-2,... for quadratic extension
@@ -126,10 +128,10 @@ def WriteStats(bitlength,index, totalInstances, avgM, avgS, avgA, avgNodes, maxN
 the full Experiment
 '''
 
-def Experiment(p, numberOfinstances):
+def Experiment(p, numberOfinstances, logp):
 
     supersolver=1
-    bitsize=ceil(log(p)/log(2))
+    bitsize=ceil(logp/log(2))
 
     constants,fastest_sets, fastest_subscripts = Algo0Preprocess(p,supersolver)
     instances = GeneratejsGivenPrime(p, numberOfinstances, constants[-1])
@@ -184,3 +186,5 @@ def Experiment(p, numberOfinstances):
         print("----------------------------------------")
 
     return "done"
+
+Experiment(p, 1, logp)
