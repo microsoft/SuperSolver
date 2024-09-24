@@ -43,6 +43,7 @@ will run N (an integer) instances of the subfield search problem for pseudo-rand
 Please contact Maria Corte-Real Santos (maria.santos.20@ucl.ac.uk) and/or Craig Costello (craigco@microsoft.com) and/or Jia Shi (janeshi99@gmail.com). 
 
 # Code of Conduct
+
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact opencode@microsoft.com with any additional questions or comments.
 
 ## Contributing
@@ -60,6 +61,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 # License
+
 Copyright (c) Microsoft Corporation. All rights reserved.
 
 Licensed under the [MIT](https://github.com/microsoft/vscode/blob/main/LICENSE.txt) license.
