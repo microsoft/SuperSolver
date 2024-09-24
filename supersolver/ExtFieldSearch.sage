@@ -58,22 +58,15 @@ def TonelliShanksUpdate(x,y,consts):
         y*=a3;                          counter[2]+=1
     s1=x*y;                             counter[2]+=1
     s2=s1*y;                            counter[2]+=1
-    ct = 0
     for k in range(a0, 1, -1):
         s3=s2
         for i in range(3,k+1):
             s3*=s3;                     counter[2]+=1
-            ct += 1
         if s3 != 1:
             s1*=a1;                     counter[2]+=1
-            ct += 1
         a1*=a1;                         counter[2]+=1
-        ct += 1
         if s3 != 1:
             s2*=a1;                     counter[2]+=1
-            ct += 1
-    print(f"{ct = }")
-    print("")
     return [s1,s0,counter]
 
 # computes the square root of an extension field element
@@ -115,14 +108,12 @@ def Fp2Sqrt(element,constants):
 
     for _ in range(1,c7+1):
         t2=t2^2  ;                      counter[1]+=1
-    print(f"{c6 = }")
-    print(f"{c4 = }")
+    
     t2*=c1;                             counter[2]+=1
     t2*=t1;                             counter[2]+=1
     t1,exp_count= Expon(t3,c6)
     counter[0]+=exp_count[0]; counter[1]+=exp_count[1]; counter[2]+=exp_count[2]
     t2*=t1;                             counter[2]+=1
-    print(f"{c2 = }")
     t3,t0,upd_count=TonelliShanksUpdate(t3,t0,[c2,c3,c0,c5])
     counter[0]+=upd_count[0]; counter[1]+=upd_count[1]; counter[2]+=upd_count[2]
     t2*=t3;                             counter[2]+=1
@@ -296,7 +287,6 @@ def Algo0(p, base, ext, size, constants, supersolver, fast_ells):
                 nodesVisited += 2
                 if res[1] in Fp:
                     path.append(res[1])
-                    # print(res[0])
                 else:
                     path.append(res[0])
                 right_branch.append(res[1])
@@ -377,7 +367,6 @@ def Algo0Preprocess(p,supersolver):
             _,count,_=NeighbourInFp(ell,Fp2.random_element(),p)
             muls_ell=int(count[1]+count[2])
             N_ell = DegModPoly(ell)
-            # N_ell = ell + 1
             if muls_ell < (N_ell*muls_step):
                 fast_ells.append(ell)
                 ell_counts.append(muls_ell)
@@ -401,9 +390,8 @@ def Algo0Preprocess(p,supersolver):
                 if bits[j] == '1':
                     sum_numer+=ell_counts[j]
                     sum_denom+=neighbours_ells[j]
-                    # sum_denom+=fast_ells[j]+1
             av_cost.append(round(sum_numer/sum_denom,4))
-        
+
         av_cost_sorted=sorted(av_cost)
         bits_array_sorted=sort_list(bits_array,av_cost)
 
@@ -417,10 +405,9 @@ def Algo0Preprocess(p,supersolver):
             fastest_sets.append(t)
             fastest_subscripts.append(int(bits_array_sorted[j][::-1],2))
 
-        print(f"Fastest sets have sets: {fastest_sets}")
-        print(f"Fastest sets have subscripts: {fastest_subscripts}")
-        print(" ")
-        
+        # print(f"Fastest sets have sets: {fastest_sets}")
+        # print(f"Fastest sets have subscripts: {fastest_subscripts}")
+        # print(" ")
         
     return constants,fastest_sets,fastest_subscripts
 
