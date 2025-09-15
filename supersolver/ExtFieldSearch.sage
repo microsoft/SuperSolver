@@ -267,6 +267,8 @@ def Algo0(p, base, ext, size, constants, supersolver, fast_ells):
                     for ell in fast_ells:
                         if not found:
                             found,count,vec=NeighbourInFp(ell,j,p)
+                            N_ell = DegModPoly(ell)
+                            nodesVisited += N_ell
                             counter[0]+=count[0]; counter[1]+=count[1]; counter[2]+=count[2];
                             if found:
                                 last_ell=ell
