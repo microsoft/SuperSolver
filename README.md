@@ -61,9 +61,9 @@ load("ExperimentAlgo0.sage")
 
 followed by the command 
 
-Experiment(p,N) 
+Experiment(p,N,logp) 
 
-will run N (an integer) instances of the subfield search problem for pseudo-random supersingular j-invariants over GF(p^2), as in the paper.
+will run N (an integer) instances of the subfield search problem for pseudo-random supersingular j-invariants over GF(p^2), where p = 2^logp, as in the paper.
 
 # Bugs, Questions, Comments? 
 
