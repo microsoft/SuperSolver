@@ -2,6 +2,31 @@
 
 SuperSolver is an algorithm written in Sage/Python that solves the general supersingular isogeny problem using the Delfs-Galbraith algorithm. It accompanies the paper "[Accelerating the Delfs–Galbraith Algorithm with Fast Subfield Root Detection](https://link.springer.com/chapter/10.1007/978-3-031-15982-4_10)”, by Maria Corte-Real Santos, Craig Costello and Jia Shi. 
 
+SuperSolver was published at CRYPTO 2022. Please consider citing our work if you use or build upon the results in this repository.
+
+<details>
+<summary>BibTex</summary>
+<br>
+
+```
+@inproceedings{10.1007/978-3-031-15982-4_10,
+author="Corte-Real Santos, Maria
+and Costello, Craig
+and Shi, Jia",
+editor="Dodis, Yevgeniy
+and Shrimpton, Thomas",
+title="Accelerating the Delfs--Galbraith Algorithm with Fast Subfield Root Detection",
+booktitle="Advances in Cryptology -- CRYPTO 2022",
+year="2022",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="285--314"
+}
+
+
+```
+</details>
+
 # Downloading the Modular Polynomial files
 
 The files containing the modular polynomials (in [supersolver/Modular_polys/](https://github.com/microsoft/SuperSolver/tree/main/supersolver/Modular_polys)) are stored using Git Large File Storage (LFS). For the code to run properly, first install `git-lfs`. Then, after navigating to the folder containing this repository, run `git lfs pull`.
